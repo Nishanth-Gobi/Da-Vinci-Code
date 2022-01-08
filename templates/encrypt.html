@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card">
+    <div class="title">
+        <span>Input</span>
+    </div>
+    {% if flag %}
+        <div class="image">
+            <img class="image-current" src='/{{ value }}' alt="Uploaded image appears here!">
+        </div>
+    {% else %}
+        <div class="rest">
+            <form method="POST" enctype="multipart/form-data">
+                <label> Image </label>
+                <input type="file" name="file" accept="image/png, image/jpeg, image/jpg">
+                </br></br>
+                <label>Message</label>
+                </br>
+                <textarea rows="5" name="Secret" placeholder="Enter secret message here..."></textarea>
+                </br></br>
+                <label>Key</label>
+                </br>
+                <input type="text" name="key" placeholder="Enter secret key here...">
+                </br></br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    {% endif %}
+</div>
+
+<div class="card">
+    <div class="title">
+        <span>Image with secret</span>
+    </div>
+    {% if secret_flag %}
+        <div class="image">
+            <img class="image-current" alt="Image with secret" src="/{{ value }}" height=250px width=250px>
+        </div>
+        <div class="rest">
+            <a href="/{{ value }}" download="stego_image.png">
+                <button class="btn striped-shadow dark"><span> Download </span></button>
+            </a>
+        </div>
+    {% else %}
+        <div>
+            <img class="image-current" src="https://via.placeholder.com/280x280.png?text=Current+Image" alt="Placeholder image"  height=250px width=250px>
+        </div>
+        <div class="rest">
+            <p> Your secret is safe with us :) </p>
+        </div>
+    {% endif %}
+</div>
+{% endblock content %}

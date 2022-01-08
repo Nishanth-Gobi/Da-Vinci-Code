@@ -1,0 +1,202 @@
+@import 'https://fonts.googleapis.com/css?family=Bungee+Shade';
+
+body {
+  background: url('https://images.pexels.com/photos/5466867/pexels-photo-5466867.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260') top;
+  background-size: auto;
+  font-size:1em;
+  font-family:"Courier New", Courier, monospace;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  align-content:center;
+  height:100vh;
+  min-height:100vh;
+
+}
+.card {
+  flex: 0 1 280px;
+  min-height:200px;
+  margin:10px;
+  background-color: #181717;
+  color:#FAFAFA;
+  filter:drop-shadow(0 0 6px rgba(0,0,0,0.35));
+  transition: 0.4s ease-out;
+  border-radius: 9px;
+  display:grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: minmax(min-content, max-content) auto auto; grid-auto-rows: max-content;
+  gap: 0 0;
+  grid-template-areas:
+    "."
+    "."
+    ".";
+  padding:12px 12px;
+
+}
+.card:hover {
+  filter:drop-shadow(0 3px 4px rgba(0,0,0,0.5));
+  transition: 0.2s ease-out;
+  transform:scale(1.01);
+
+}
+.image {
+  width:100%;
+  height:auto;
+}
+.image > img {
+  width:100%;
+  max-width:100%;
+  height:auto;
+  transition: 0.1s ease-out;
+  border-radius:9px;
+
+}
+.image > img:nth-of-type(2) {
+  position:absolute;
+  top:12px;
+  left:12px;
+  width:calc(100% - 24px);
+}
+
+.image-current {
+  z-index:1;
+  opacity:1;
+}
+.card > .image:hover > .image-hover {
+  opacity:1;
+}
+.title {
+  font-size:2em;
+  font-weight:bold;
+  padding: 2px 0;
+}
+.rest {
+  font-size:0.8em;
+}
+
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+:focus {
+  outline: none;
+}
+
+div {
+  margin: 3rem auto;
+  max-width: 660px;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+button {
+  overflow: visible;
+  border: 0;
+  padding: 0;
+  margin: 1.8rem;
+}
+.btn.striped-shadow span {
+  display: block;
+  position: relative;
+  z-index: 2;
+  border: 5px solid;
+}
+.btn.striped-shadow.white span {
+  border-color: #ffffff;
+  color: #ffffff;
+  background: #181717;
+}
+
+.btn.striped-shadow.dark span {
+  border-color: #000000;
+  color: #000000;
+  background: #ffffff;
+}
+
+.btn {
+  font-family: 'Bungee Shade', sans-serif;
+  height: 80px;
+  line-height: 65px;
+  display: inline-block;
+  letter-spacing: 1px;
+  position: relative;
+  font-size: 1.25rem;
+  /*transition: opacity .3s, z-index .3s step-end, -webkit-transform .3s;*/
+  /*transition: opacity .3s, z-index .3s step-end, transform .3s;*/
+  transition: opacity .3s, z-index .3s step-end, transform .3s, -webkit-transform .3s;
+  z-index: 1;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn {
+  width: 155px;
+  height: 48px;
+  line-height: 38px;
+}
+
+button.btn.striped-shadow.white:after, button.btn.striped-shadow.white:before {
+  background-image: linear-gradient(
+    135deg,
+    transparent 0,
+    transparent 5px,
+    #181717 5px,
+    #181717 10px,
+    transparent 10px
+  );
+}
+
+button.btn.striped-shadow:hover:before {
+  max-height: calc(100% - 10px);
+}
+
+button.btn.striped-shadow:after {
+  width: calc(100% - 4px);
+  height: 8px;
+  left: -10px;
+  bottom: -9px;
+  background-size: 15px 8px;
+  background-repeat: repeat-x;
+}
+button.btn.striped-shadow:after, button.btn.striped-shadow:before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 1;
+  /*transition: max-height .3s, width .3s, -webkit-transform .3s;*/
+  /*transition: transform .3s, max-height .3s, width .3s;*/
+  transition: transform .3s, max-height .3s, width .3s, -webkit-transform .3s;
+}
+
+.btn.striped-shadow:hover {
+  -webkit-transform: translate(-12px, 12px);
+  -ms-transform: translate(-12px, 12px);
+  transform: translate(-12px, 12px);
+  z-index: 3;
+}
+
+button.btn.striped-shadow:hover:after, button.btn.striped-shadow:hover:before {
+  -webkit-transform: translate(12px, -12px);
+  -ms-transform: translate(12px, -12px);
+  transform: translate(12px, -12px);
+}
+button.btn.striped-shadow:before {
+  width: 8px;
+  max-height: calc(100% - 5px);
+  height: 100%;
+  left: -12px;
+  bottom: -5px;
+  background-size: 8px 15px;
+  background-repeat: repeat-y;
+  background-position: 0 100%;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}

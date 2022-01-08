@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card">
+    <div class="title">
+        <span>Image with secret</span>
+    </div>
+    {% if value %}
+        <div class="image">
+            <img class="image-current" src="{{ value }}" alt="Image with secret">
+        </div>
+    {% endif %}
+        <div class="title">
+            <form method="POST" action="" enctype="multipart/form-data">
+                <input type="file" name="file">
+                <input type="text" name="key">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+</div>
+
+<div class="card">
+    <div class="title">
+        <span>Your message</span>
+    </div>
+    {% if value %}
+        <p>{{ message }}</p>
+    {% else %}
+        <p>Your secret will appear here...</p>
+    {% endif %}
+</div>
+
+{% endblock content %}
