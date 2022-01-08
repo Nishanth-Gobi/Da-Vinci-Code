@@ -4,8 +4,8 @@
 
 Users can,
 
-- Upload an image along with a secret message and download an image with the secret message encoded in it.
-- Upload a stegonanographed image and retrive the secret message.
+- Embed an AES encrypted message within an image
+- Extract the message from a steganographed image given the key used for encryption
 
 ## Installation
 
